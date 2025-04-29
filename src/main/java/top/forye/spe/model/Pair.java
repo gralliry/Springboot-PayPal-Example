@@ -1,4 +1,4 @@
-package top.forye.crrs.utils;
+package top.forye.spe.model;
 
 public class Pair<T1, T2> {
     private final T1 _first;

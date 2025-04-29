@@ -1,1 +1,22 @@
-spring.application.name=Springboot-PayPal-Example
+spring:
+  application:
+    name: Springboot-PayPal-Example
+server:
+  port: 9093
+  base-url: http://localhost:9093
+
+paypal:
+  # 创建PayPal应用
+  # https://developer.paypal.com/dashboard/applications
+  clientId: 你的PayPal客户端ID
+  secretKey: 你的PayPal客户端密钥
+  # 创建PayPal Webhook ID
+  # https://developer.paypal.com/dashboard/applications
+  # 如果你不明白，webhook事件全选就行
+  webhookId: 你的PayPalWebhookID
+  # 如果是沙盒环境，设置为true，线上生产环境就设置为false
+  test: true
+  # 设置支付成功后的跳转地址
+  returnUrl: ${server.base-url}/return
+  # 设置支付取消后的跳转地址
+  cancelUrl: ${server.base-url}/cancel
